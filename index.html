@@ -30,6 +30,7 @@
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#edge" class="nav-link">Edge</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -133,11 +134,56 @@
     </div>
   </section>
 
+  <!-- ============================ EDGE / DOMAIN ADVANTAGE ============================ -->
+  <section class="section section-alt edge" id="edge">
+    <div class="container">
+      <span class="edge-eyebrow animate-on-scroll">The unfair advantage</span>
+      <h2 class="section-title animate-on-scroll">Biology was the hard part.</h2>
+      <div class="edge-body">
+        <p class="animate-on-scroll">
+          Most engineers building AI have never had to model data this unforgiving.
+          Biological data is sparse, noisy, and high-dimensional, and it rarely comes
+          with clean ground truth — a protein doesn't ship with labels, a genome doesn't
+          fit in a spreadsheet, and a clinical signal is mostly noise. Years in biological
+          data science were years spent learning to find the signal anyway.
+        </p>
+        <p class="animate-on-scroll">
+          That's the edge I carry into AI. I don't just wire up pipelines — I understand
+          the domains where models quietly break. Bringing RAG, agents, and LLMOps to
+          biomedical and scientific data isn't a pivot away from my background. It's the
+          payoff for it: <strong>a decade of domain fluency that most AI engineers will
+          never have, applied to the problems that need it most.</strong>
+        </p>
+      </div>
+
+      <div class="edge-points">
+        <div class="edge-point animate-on-scroll">
+          <h3>Hard data by default</h3>
+          <p>Sparse labels, high dimensionality, and measurement noise were my baseline — not the exception.</p>
+        </div>
+        <div class="edge-point animate-on-scroll">
+          <h3>Domain fluency</h3>
+          <p>I read the biology, not just the schema. I know what a result <em>means</em>, not only what it computes to.</p>
+        </div>
+        <div class="edge-point animate-on-scroll">
+          <h3>Correctness-first</h3>
+          <p>In science, a confident wrong answer is worse than none. That instinct shapes how I build every system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================ PROJECTS ============================ -->
   <section class="section" id="projects">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Things I've Built</h2>
       <p class="section-sub animate-on-scroll">Systems across AI, full-stack, and bioinformatics.</p>
+
+      <!-- Skills the projects put to work -->
+      <div class="proj-skills animate-on-scroll">
+        <span class="proj-skills-label">Skills these projects put to work</span>
+        <div class="proj-skills-pills" id="proj-skills-pills"><!-- injected by script.js --></div>
+      </div>
 
       <!-- Featured card injected first, then grid -->
       <div id="featured-project"></div>
@@ -177,8 +223,7 @@
           GitHub
         </a>
       </div>
-      <!-- TODO: MIHIR — replace with your email address -->
-      <a href="mailto:MIHIR@EMAIL.COM" class="contact-email animate-on-scroll">MIHIR@EMAIL.COM</a>
+      <a href="mailto:mihirgor.work@gmail.com" class="contact-email animate-on-scroll">mihirgor.work@gmail.com</a>
     </div>
   </section>
 </main>

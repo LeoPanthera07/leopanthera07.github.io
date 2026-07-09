@@ -8,11 +8,11 @@ const GITHUB_USER = "LeoPanthera07";
 /* ---------- Data: Journey timeline ---------- */
 const JOURNEY = [
   {
-    year: "2020",
+    year: "2023–2025",
     cat: "Education",
     category: "education",
     title: "M.Sc in Biological Data Science — SPPU",
-    desc: "Began graduate studies in what most called \"Bioinformatics\" — but the core was always data: complex biological systems, massive genomic datasets, and extracting signal from noise. This is where the data mindset took root.",
+    desc: "Graduate studies in what most called \"Bioinformatics\" — but the core was always data: complex biological systems, massive genomic datasets, and extracting signal from noise. Left with a research pipeline, a production open-source tool, and a conviction that the most interesting problems sit at the intersection of biology, data, and software.",
     tags: ["Data Science", "Biology", "SPPU"],
   },
   {
@@ -23,14 +23,6 @@ const JOURNEY = [
     desc: "Awarded a PG Research Fellowship during M.Sc. Channeled it into building BFEER — an open-source computational tool for drug discovery workflows. Protein structure analysis with GROMACS and VMD, PDB parsing, and binding energy computation. Built for scientists.",
     impact: "100+ scientists globally adopted BFEER",
     tags: ["Drug Discovery", "Open Source", "Python", "GROMACS"],
-  },
-  {
-    year: "2022",
-    cat: "Education",
-    category: "education",
-    title: "M.Sc Completed — SPPU",
-    desc: "Graduated with a Master's in Biological Data Science. Left with a research pipeline, a production open-source tool, and a conviction: the most interesting problems sit at the intersection of biology, data, and software.",
-    tags: ["SPPU", "Graduation", "Bioinformatics"],
   },
   {
     year: "2022–2023",
@@ -65,14 +57,6 @@ const JOURNEY = [
     tags: ["LangChain", "Inngest", "LlamaIndex", "TweetNaCl", "SSE"],
   },
   {
-    year: "2024",
-    cat: "Education",
-    category: "education",
-    title: "PG Diploma in Generative & Agentic AI — IIT Gandhinagar",
-    desc: "Joined IIT Gandhinagar's PG Diploma in Generative AI and Agentic AI. The decision was deliberate: formalize the depth, work with world-class faculty, build at the frontier. Not a career break — an acceleration.",
-    tags: ["IIT Gandhinagar", "GenAI", "Agentic AI"],
-  },
-  {
     year: "2024–2025",
     cat: "Project",
     category: "project",
@@ -98,7 +82,15 @@ const JOURNEY = [
     tags: ["LangGraph", "GraphRAG", "Multi-Agent", "Biomedical"],
   },
   {
-    year: "2025 — Present",
+    year: "Feb 2026 – Present",
+    cat: "Education",
+    category: "education",
+    title: "PG Diploma in Generative & Agentic AI — IIT Gandhinagar",
+    desc: "Joined IIT Gandhinagar's PG Diploma in Generative AI and Agentic AI. The decision was deliberate: formalize the depth, work with world-class faculty, build at the frontier. Not a career break — an acceleration.",
+    tags: ["IIT Gandhinagar", "GenAI", "Agentic AI"],
+  },
+  {
+    year: "2026 – Present",
     cat: "What's Next",
     category: "next",
     title: "AI Engineer · The Next Chapter",
@@ -189,7 +181,7 @@ const PROJECTS = [
   },
   {
     name: "Binding Free Energy Estimator",
-    repo: "BFEER",
+    repo: null, // TODO: MIHIR — no GitHub repo found; add the URL if it lives elsewhere
     cat: "Bioinformatics",
     desc: "Open-source drug-discovery tool for binding free energy estimation — adopted by 100+ scientists globally, built under a PG Research Fellowship.",
     tags: ["Drug Discovery", "GROMACS", "VMD", "Python", "Open Source"],
@@ -267,6 +259,23 @@ function renderJourney() {
   }).join("");
 }
 
+/* Recurring skills demonstrated across the project set */
+const PROJECT_SKILLS = [
+  "LangGraph", "LangChain", "RAG", "GraphRAG", "Multi-Agent", "MCP",
+  "FastAPI", "Node.js", "Microservices", "MLflow", "XGBoost", "FAISS",
+  "Qdrant", "Neo4j", "PostgreSQL", "Groq", "Ollama", "Docker",
+  "E2E Encryption", "Bioinformatics",
+];
+
+/* ---------- Render: project-skills strip ---------- */
+function renderProjectSkills() {
+  const el = document.getElementById("proj-skills-pills");
+  if (!el) return;
+  el.innerHTML = PROJECT_SKILLS.map(
+    (s) => `<span class="skill-pill">${esc(s)}</span>`
+  ).join("");
+}
+
 /* ---------- Render: Projects ---------- */
 function renderProjects() {
   document.getElementById("featured-project").innerHTML = `
@@ -290,7 +299,11 @@ function renderProjects() {
         <p class="proj-desc">${esc(p.desc)}</p>
         <div class="proj-tags">${tagPills(p.tags, 4)}</div>
         <div class="proj-foot">
-          <a class="proj-link" href="${repoUrl(p.repo)}" target="_blank" rel="noopener">${GH_ICON} GitHub</a>
+          ${
+            p.repo
+              ? `<a class="proj-link" href="${repoUrl(p.repo)}" target="_blank" rel="noopener">${GH_ICON} GitHub</a>`
+              : `<span class="proj-link proj-link--muted">${GH_ICON} Open-source · link on request</span>`
+          }
         </div>
       </article>`
   ).join("");
@@ -488,6 +501,7 @@ function initNav() {
 /* ---------- Boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderJourney();
+  renderProjectSkills();
   renderProjects();
   renderSkills();
   initScrollReveal();
