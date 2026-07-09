@@ -903,6 +903,10 @@ a {
   opacity: 0.7;
 }
 
+.featured-card .proj-foot {
+  gap: 22px;
+}
+
 .proj-link--muted {
   color: var(--text-secondary);
   cursor: default;

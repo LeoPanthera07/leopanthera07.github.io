@@ -8,21 +8,12 @@ const GITHUB_USER = "LeoPanthera07";
 /* ---------- Data: Journey timeline ---------- */
 const JOURNEY = [
   {
-    year: "2023–2025",
+    year: "Aug 2023 – Mar 2025",
     cat: "Education",
     category: "education",
-    title: "M.Sc in Biological Data Science — SPPU",
-    desc: "Graduate studies in what most called \"Bioinformatics\" — but the core was always data: complex biological systems, massive genomic datasets, and extracting signal from noise. Left with a research pipeline, a production open-source tool, and a conviction that the most interesting problems sit at the intersection of biology, data, and software.",
-    tags: ["Data Science", "Biology", "SPPU"],
-  },
-  {
-    year: "2021–2022",
-    cat: "Project + Fellowship",
-    category: "project",
-    title: "PG Research Fellowship & Binding Free Energy Estimator",
-    desc: "Awarded a PG Research Fellowship during M.Sc. Channeled it into building BFEER — an open-source computational tool for drug discovery workflows. Protein structure analysis with GROMACS and VMD, PDB parsing, and binding energy computation. Built for scientists.",
-    impact: "100+ scientists globally adopted BFEER",
-    tags: ["Drug Discovery", "Open Source", "Python", "GROMACS"],
+    title: "M.Sc. in Bioinformatics — SPPU",
+    desc: "The degree said Bioinformatics; the work was data science — complex biological systems, massive genomic datasets, and the daily discipline of pulling signal from noise. Left Savitribai Phule Pune University with a research pipeline, a production open-source tool, and a conviction that the most interesting problems sit where biology, data, and software meet.",
+    tags: ["Bioinformatics", "Data Science", "SPPU"],
   },
   {
     year: "2023",
@@ -45,15 +36,24 @@ const JOURNEY = [
     cat: "Project",
     category: "project",
     title: "Going Deeper — ManasGriha, PDFer, Whisper",
-    desc: "Three systems in quick succession. ManasGriha: multi-persona conversational AI with real-time SSE streaming. PDFer: an event-driven RAG pipeline on Inngest + LlamaIndex + Qdrant. Whisper: a secure LAN chat app with TweetNaCl ECDH end-to-end encryption.",
+    desc: "Three systems in quick succession. ManasGriha: a memory-aware conversational AI with real-time SSE streaming. PDFer: an event-driven RAG pipeline on Inngest + LlamaIndex + Qdrant. Whisper: a secure LAN chat app with TweetNaCl ECDH end-to-end encryption.",
     tags: ["LangChain", "Inngest", "LlamaIndex", "TweetNaCl", "SSE"],
+  },
+  {
+    year: "2024–2025",
+    cat: "Project + Fellowship",
+    category: "project",
+    title: "PG Research Fellowship & Binding Free Energy Estimator",
+    desc: "Awarded a PG Research Fellowship during the M.Sc. Channeled it into building BFEER — an open-source computational tool for drug discovery workflows: protein structure analysis with GROMACS and VMD, PDB parsing, and binding energy computation. Built for scientists.",
+    impact: "100+ scientists globally adopted BFEER",
+    tags: ["Drug Discovery", "Open Source", "Python", "GROMACS"],
   },
   {
     year: "May 2024 – Jun 2026",
     cat: "Work",
     category: "work",
     title: "Data Intern — Citadel Precision Medicine",
-    desc: "Analyzed TCGA breast cancer transcriptomics — mining high-dimensional RNA-seq expression data for signal that holds up clinically. Real precision-medicine data science: noisy measurements, sparse ground truth, and patient impact at stake.",
+    desc: "Analyzed TCGA breast cancer transcriptomics — building reproducible Python pipelines (pandas, NumPy) over high-dimensional clinical data: 1,000+ patients, 22,540 features each. Validation, normalization, anomaly handling, and feature engineering; surfaced differentially expressed gene signals and validated them against published clinical studies, delivering model-ready features downstream. Remote, Pune.",
     tags: ["Precision Medicine", "TCGA", "Transcriptomics", "RNA-seq"],
   },
   {
@@ -65,29 +65,29 @@ const JOURNEY = [
     tags: ["MLflow", "XGBoost", "FAISS", "Evidently", "CrewAI", "MCP"],
   },
   {
-    year: "2025",
-    cat: "Achievement",
-    category: "achievement",
-    title: "Won HackRush '26 — IIT Gandhinagar",
-    desc: "Competed and won HackRush '26, IIT Gandhinagar's flagship hackathon. A validation of the ability to execute under pressure, architect fast, and ship a working system in compressed time.",
-    tags: ["Hackathon", "IIT Gandhinagar", "Winner"],
-  },
-  {
-    year: "2025",
-    cat: "Project",
-    category: "project",
-    title: "Solace AI — The Capstone",
-    desc: "A 7-stage LangGraph multi-agent pipeline for clinical biomedical research: Researcher → Retriever → Graph Builder → Corroborator → Fact Checker → Synthesizer → Editor. Hybrid GraphRAG over Hetionet/PrimeKG with hallucination containment at the architecture level. RAGAS + LangSmith for evaluation.",
-    impact: "Capstone — IIT Gandhinagar PG Diploma",
-    tags: ["LangGraph", "GraphRAG", "Multi-Agent", "Biomedical"],
-  },
-  {
     year: "Feb 2026 – Present",
     cat: "Education",
     category: "education",
     title: "PG Diploma in Generative & Agentic AI — IIT Gandhinagar",
     desc: "Joined IIT Gandhinagar's PG Diploma in Generative AI and Agentic AI. The decision was deliberate: formalize the depth, work with world-class faculty, build at the frontier. Not a career break — an acceleration.",
     tags: ["IIT Gandhinagar", "GenAI", "Agentic AI"],
+  },
+  {
+    year: "May 2026",
+    cat: "Achievement",
+    category: "achievement",
+    title: "Won HackRush '26 — IIT Gandhinagar",
+    desc: "Led a cross-functional team to 1st place at HackRush '26, IIT Gandhinagar's flagship hackathon — architecting and shipping a working AI-driven solution under tight time constraints.",
+    tags: ["Hackathon", "IIT Gandhinagar", "Winner"],
+  },
+  {
+    year: "2026",
+    cat: "Project",
+    category: "project",
+    title: "Solace AI — The Capstone",
+    desc: "A 7-stage LangGraph multi-agent pipeline for clinical biomedical research: Researcher → Retriever → Graph Builder → Corroborator → Fact Checker → Synthesizer → Editor. Hybrid GraphRAG over Hetionet/PrimeKG with hallucination containment at the architecture level. RAGAS + LangSmith for evaluation.",
+    impact: "Capstone — IIT Gandhinagar PG Diploma",
+    tags: ["LangGraph", "GraphRAG", "Multi-Agent", "Biomedical"],
   },
   {
     year: "2026 – Present",
@@ -103,6 +103,7 @@ const JOURNEY = [
 const FEATURED = {
   name: "Solace AI",
   repo: "Solace---Research-Assistant-",
+  live: "https://solace-5v0f.onrender.com/",
   badge: "Featured · IIT Gandhinagar Capstone",
   desc: "A 7-stage multi-agent biomedical research pipeline that turns clinical queries into structured, citation-backed evidence documents. Hybrid GraphRAG over biomedical knowledge graphs, a dedicated Corroborator stage for hallucination containment, and correctness prioritized over latency.",
   tags: ["LangGraph", "FastAPI", "GraphRAG", "LLMOps", "Groq", "Multi-Agent", "Biomedical"],
@@ -210,6 +211,9 @@ const SKILLS = [
 const GH_ICON =
   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>';
 
+const LIVE_ICON =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>';
+
 const CAT_VARS = {
   education: "var(--cat-education)",
   work: "var(--cat-work)",
@@ -286,6 +290,11 @@ function renderProjects() {
       <div class="proj-tags">${FEATURED.tags.map((t) => `<span class="proj-tag">${esc(t)}</span>`).join("")}</div>
       <div class="proj-foot">
         <a class="proj-link" href="${repoUrl(FEATURED.repo)}" target="_blank" rel="noopener">${GH_ICON} View on GitHub</a>
+        ${
+          FEATURED.live
+            ? `<a class="proj-link proj-link--live" href="${FEATURED.live}" target="_blank" rel="noopener">${LIVE_ICON} Live demo</a>`
+            : ""
+        }
       </div>
     </div>`;
 
