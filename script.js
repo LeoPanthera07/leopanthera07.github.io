@@ -380,6 +380,72 @@ function initMemoji() {
   if (memoji.complete && memoji.naturalWidth === 0) fail();
 }
 
+/* ---------- Hero entrance ---------- */
+function initHeroEntrance() {
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => document.body.classList.add("loaded"))
+  );
+}
+
+/* ---------- Scroll progress bar + navbar shrink ---------- */
+function initScrollFX() {
+  const bar = document.getElementById("scroll-progress");
+  const nav = document.getElementById("navbar");
+  let ticking = false;
+  const update = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+    if (bar) bar.style.width = pct + "%";
+    nav.classList.toggle("scrolled", window.scrollY > 10);
+    ticking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+  update();
+}
+
+/* ---------- Stat count-up ---------- */
+function initCounters() {
+  const nums = document.querySelectorAll(".stat-num[data-target]");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return; // leave final text
+  const countUp = (el) => {
+    const target = Number(el.dataset.target) || 0;
+    const suffix = el.dataset.suffix || "";
+    const dur = 1100;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    el.textContent = "0" + suffix;
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          countUp(e.target);
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  nums.forEach((n) => io.observe(n));
+}
+
 /* ---------- Navbar: active link + mobile toggle ---------- */
 function initNav() {
   const toggle = document.getElementById("nav-toggle");
@@ -428,4 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTypewriter();
   initMemoji();
   initNav();
+  initHeroEntrance();
+  initScrollFX();
+  initCounters();
 });

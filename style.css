@@ -951,3 +951,165 @@ a {
     animation: none !important;
   }
 }
+
+/* ============================================================
+   Enhanced motion layer
+   ============================================================ */
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #5ac8fa);
+  z-index: 1100;
+  transition: width 0.12s linear;
+  will-change: width;
+}
+
+/* Navbar solidify + shrink on scroll */
+.navbar {
+  transition: box-shadow 0.35s var(--ease), background 0.35s var(--ease);
+}
+.nav-inner {
+  transition: height 0.35s var(--ease);
+}
+.navbar.scrolled {
+  box-shadow: 0 1px 0 var(--border), 0 10px 34px rgba(0, 0, 0, 0.07);
+}
+@media (prefers-color-scheme: dark) {
+  .navbar.scrolled {
+    box-shadow: 0 1px 0 var(--border), 0 10px 34px rgba(0, 0, 0, 0.5);
+  }
+}
+.navbar.scrolled .nav-inner {
+  height: 48px;
+}
+
+/* Hero entrance — staggered load-in */
+.hero-name,
+.hero-tagline,
+.hero-sub,
+.hero-cta,
+.hero-visual {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  will-change: opacity, transform;
+}
+body.loaded .hero-visual {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.12s;
+}
+body.loaded .hero-name {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.22s;
+}
+body.loaded .hero-tagline {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.36s;
+}
+body.loaded .hero-sub {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.5s;
+}
+body.loaded .hero-cta {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.62s;
+}
+
+/* Memoji gentle float */
+.memoji-container {
+  animation: float 6.5s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Section headings — blur-to-sharp reveal (very Apple) */
+.section-title.animate-on-scroll {
+  filter: blur(12px);
+  transition: opacity 0.75s var(--ease), transform 0.75s var(--ease),
+    filter 0.75s var(--ease);
+}
+.section-title.animate-on-scroll.visible {
+  filter: blur(0);
+}
+
+/* Buttons — springier press + subtle hover lift */
+.btn {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.25s var(--ease), border-color 0.25s var(--ease),
+    color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.btn-ghost:hover {
+  transform: translateY(-2px);
+}
+
+/* Project cards — sheen sweep on hover */
+.proj-card {
+  position: relative;
+  overflow: hidden;
+}
+.proj-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 9%, transparent),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left 0.7s var(--ease);
+  pointer-events: none;
+}
+.proj-card:hover::after {
+  left: 130%;
+}
+
+/* Reduced-motion overrides for the enhanced layer */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none;
+  }
+  .memoji-container {
+    animation: none;
+  }
+  .hero-name,
+  .hero-tagline,
+  .hero-sub,
+  .hero-cta,
+  .hero-visual {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .section-title.animate-on-scroll {
+    filter: none !important;
+  }
+  .proj-card::after {
+    display: none;
+  }
+}
