@@ -187,7 +187,7 @@ const PROJECTS = [
     tags: ["Drug Discovery", "GROMACS", "VMD", "Python", "Open Source"],
   },
   {
-    name: "SupplyChainAutomationSolution",
+    name: "Supply Chain Automator",
     repo: "SupplyChainAutomationSolution",
     cat: "Architecture Design",
     desc: "Architecture design document for a modular supply chain automation platform — data pipeline, ML/decision engine, backend/frontend, security, and deployment, with a price-dashboard mockup.",
