@@ -25,14 +25,6 @@ const JOURNEY = [
     tags: ["Drug Discovery", "Open Source", "Python", "GROMACS"],
   },
   {
-    year: "2022–2023",
-    cat: "Work",
-    category: "work",
-    title: "Data Intern — Citadel Precision Medicine",
-    desc: "First industry role. Worked on precision medicine data workflows — translating the rigour of biological data science into real clinical data pipelines. Learned what it means to ship data work in production with patient impact at stake.",
-    tags: ["Industry", "Precision Medicine", "Data Engineering"],
-  },
-  {
     year: "2023",
     cat: "Project",
     category: "project",
@@ -55,6 +47,14 @@ const JOURNEY = [
     title: "Going Deeper — ManasGriha, PDFer, Whisper",
     desc: "Three systems in quick succession. ManasGriha: multi-persona conversational AI with real-time SSE streaming. PDFer: an event-driven RAG pipeline on Inngest + LlamaIndex + Qdrant. Whisper: a secure LAN chat app with TweetNaCl ECDH end-to-end encryption.",
     tags: ["LangChain", "Inngest", "LlamaIndex", "TweetNaCl", "SSE"],
+  },
+  {
+    year: "May 2024 – Jun 2026",
+    cat: "Work",
+    category: "work",
+    title: "Data Intern — Citadel Precision Medicine",
+    desc: "Analyzed TCGA breast cancer transcriptomics — mining high-dimensional RNA-seq expression data for signal that holds up clinically. Real precision-medicine data science: noisy measurements, sparse ground truth, and patient impact at stake.",
+    tags: ["Precision Medicine", "TCGA", "Transcriptomics", "RNA-seq"],
   },
   {
     year: "2024–2025",
