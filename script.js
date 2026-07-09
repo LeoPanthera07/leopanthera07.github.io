@@ -52,8 +52,8 @@ const JOURNEY = [
     cat: "What's Next",
     category: "next",
     title: "AI Engineer · The Next Chapter",
-    desc: "Targeting AI Engineer and Agentic AI Engineer roles at companies building serious AI infrastructure. Simultaneously preparing for the UPSC Civil Services Examination, targeting the Indian Foreign Service — because navigating complex systems isn't limited to software.",
-    tags: ["AI Engineering", "LLMOps", "UPSC", "IFS", "Open to Work"],
+    desc: "Targeting AI Engineer and Agentic AI Engineer roles at companies building serious AI infrastructure — where correctness, observability, and system design actually matter. The journey continues.",
+    tags: ["AI Engineering", "LLMOps", "Agentic AI", "Open to Work"],
   },
 ];
 
