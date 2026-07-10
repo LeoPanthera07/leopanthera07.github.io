@@ -207,7 +207,7 @@ function renderJourney() {
     const tags = n.tags.map((t) => `<span class="tl-tag">${esc(t)}</span>`).join("");
     return `
       <div class="tl-node animate-on-scroll" style="--node-color:${color}">
-        <div class="tl-card">
+        <div class="tl-card glass-card">
           <div class="tl-meta">
             <span class="tl-year">${esc(n.year)}</span>
             <span class="tl-cat">${esc(n.cat)}</span>
@@ -241,7 +241,7 @@ function renderProjectSkills() {
 /* ---------- Render: Projects ---------- */
 function renderProjects() {
   document.getElementById("featured-project").innerHTML = `
-    <div class="featured-card animate-on-scroll">
+    <div class="featured-card glass-card animate-on-scroll">
       <span class="featured-badge">${esc(FEATURED.badge)}</span>
       <h3>${esc(FEATURED.name)}</h3>
       <p class="proj-desc">${esc(FEATURED.desc)}</p>
@@ -258,19 +258,23 @@ function renderProjects() {
 
   document.getElementById("projects-grid").innerHTML = PROJECTS.map(
     (p) => `
-      <article class="proj-card animate-on-scroll">
-        <div class="proj-head">
-          <h3>${esc(p.name)}</h3>
-          <span class="proj-cat">${esc(p.cat)}</span>
+      <article class="proj-card glass-card animate-on-scroll" tabindex="0">
+        <div class="card-preview">
+          <div class="proj-head">
+            <h3>${esc(p.name)}</h3>
+            <span class="proj-cat">${esc(p.cat)}</span>
+          </div>
+          <p class="proj-desc">${esc(p.desc)}</p>
         </div>
-        <p class="proj-desc">${esc(p.desc)}</p>
-        <div class="proj-tags">${tagPills(p.tags, 4)}</div>
-        <div class="proj-foot">
-          ${
-            p.repo
-              ? `<a class="proj-link" href="${repoUrl(p.repo)}" target="_blank" rel="noopener">${GH_ICON} GitHub</a>`
-              : `<span class="proj-link proj-link--muted">${GH_ICON} Open-source · link on request</span>`
-          }
+        <div class="card-details">
+          <div class="proj-tags">${tagPills(p.tags, 4)}</div>
+          <div class="proj-foot">
+            ${
+              p.repo
+                ? `<a class="proj-link" href="${repoUrl(p.repo)}" target="_blank" rel="noopener">${GH_ICON} GitHub</a>`
+                : `<span class="proj-link proj-link--muted">${GH_ICON} Open-source · link on request</span>`
+            }
+          </div>
         </div>
       </article>`
   ).join("");
@@ -316,30 +320,65 @@ function initScrollReveal() {
   els.forEach((el) => observer.observe(el));
 }
 
-/* ---------- Hero tagline typewriter ---------- */
-function initTypewriter() {
+/* ---------- Hero tagline: kinetic word-reveal ---------- */
+function initKineticText() {
   const el = document.getElementById("hero-tagline");
+  if (!el) return;
   const full = "Building Intelligent Systems · From Biology to AI · Engineer at the Edge of What's Possible";
+  const words = full.split(" ");
+  el.innerHTML = words
+    .map(
+      (w, i) =>
+        `<span class="word-reveal" style="animation-delay:${i * 80}ms">${esc(w)}&nbsp;</span>`
+    )
+    .join("");
+  // Trigger the reveal once the hero is on screen (it is, at load).
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => document.body.classList.add("hero-visible"))
+  );
+}
+
+/* ---------- Magnetic buttons ---------- */
+function initMagnetic() {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) {
-    el.textContent = full;
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (reduce || !fine) return;
+  document.querySelectorAll(".btn-magnetic").forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      btn.style.transition = "transform 0.1s linear";
+    });
+    btn.addEventListener("mousemove", (e) => {
+      const r = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) * 0.25;
+      const dy = (e.clientY - (r.top + r.height / 2)) * 0.25;
+      btn.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.style.transition = "transform 0.4s cubic-bezier(0.25,0.1,0.25,1)";
+      btn.style.transform = "translate(0,0)";
+    });
+  });
+}
+
+/* ---------- Spring skill chips: mark Skills in-view ---------- */
+function initSkillsInView() {
+  const skills = document.getElementById("skills");
+  if (!skills || !("IntersectionObserver" in window)) {
+    if (skills) skills.classList.add("in-view");
     return;
   }
-  let i = 0;
-  const cursor = document.createElement("span");
-  cursor.className = "cursor";
-  cursor.style.height = "1em";
-  el.appendChild(cursor);
-  const tick = () => {
-    if (i <= full.length) {
-      cursor.insertAdjacentText("beforebegin", full[i - 1] || "");
-      i++;
-      setTimeout(tick, full[i - 2] === "·" ? 220 : 26);
-    } else {
-      setTimeout(() => cursor.remove(), 1400);
-    }
-  };
-  setTimeout(tick, 400);
+  const io = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in-view");
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  io.observe(skills);
 }
 
 /* ---------- Memoji fallback ---------- */
@@ -360,17 +399,12 @@ function initMemoji() {
   if (memoji.complete && memoji.naturalWidth === 0) fail();
 }
 
-/* ---------- Hero entrance ---------- */
-function initHeroEntrance() {
-  requestAnimationFrame(() =>
-    requestAnimationFrame(() => document.body.classList.add("loaded"))
-  );
-}
-
 /* ---------- Scroll progress bar + navbar shrink ---------- */
 function initScrollFX() {
   const bar = document.getElementById("scroll-progress");
   const nav = document.getElementById("navbar");
+  const heroName = document.querySelector(".hero-name");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let ticking = false;
   const update = () => {
     const doc = document.documentElement;
@@ -378,6 +412,12 @@ function initScrollFX() {
     const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
     if (bar) bar.style.width = pct + "%";
     nav.classList.toggle("scrolled", window.scrollY > 10);
+    // Hero parallax — name drifts up and fades as you scroll away
+    if (heroName && !reduce) {
+      const hp = Math.min(1, window.scrollY / window.innerHeight);
+      heroName.style.transform = `translateY(${hp * -40}px)`;
+      heroName.style.opacity = String(1 - hp * 1.4);
+    }
     ticking = false;
   };
   window.addEventListener(
@@ -395,9 +435,18 @@ function initScrollFX() {
 
 /* ---------- Stat count-up ---------- */
 function initCounters() {
-  const nums = document.querySelectorAll(".stat-num[data-target]");
+  const nums = document.querySelectorAll(
+    ".stat-num[data-target], .animate-counter[data-target]"
+  );
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || !("IntersectionObserver" in window)) return; // leave final text
+  if (reduce || !("IntersectionObserver" in window)) {
+    // leave final/target text
+    nums.forEach((el) => {
+      const t = el.dataset.target;
+      if (t !== undefined) el.textContent = t + (el.dataset.suffix || "");
+    });
+    return;
+  }
   const countUp = (el) => {
     const target = Number(el.dataset.target) || 0;
     const suffix = el.dataset.suffix || "";
@@ -472,10 +521,11 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   renderSkills();
   initScrollReveal();
-  initTypewriter();
+  initKineticText();
   initMemoji();
   initNav();
-  initHeroEntrance();
+  initMagnetic();
+  initSkillsInView();
   initScrollFX();
   initCounters();
 });
