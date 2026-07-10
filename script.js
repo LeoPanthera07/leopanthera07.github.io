@@ -60,6 +60,7 @@ const JOURNEY = [
 /* ---------- Data: Projects ---------- */
 const FEATURED = {
   name: "Solace AI",
+  sub: "Clinical-Evidence Research Assistant",
   repo: "Solace---Research-Assistant-",
   live: "https://solace-5v0f.onrender.com/",
   badge: "Featured · IIT Gandhinagar Capstone",
@@ -244,6 +245,7 @@ function renderProjects() {
     <div class="featured-card glass-card animate-on-scroll">
       <span class="featured-badge">${esc(FEATURED.badge)}</span>
       <h3>${esc(FEATURED.name)}</h3>
+      ${FEATURED.sub ? `<p class="featured-sub">${esc(FEATURED.sub)}</p>` : ""}
       <p class="proj-desc">${esc(FEATURED.desc)}</p>
       <div class="proj-tags">${FEATURED.tags.map((t) => `<span class="proj-tag">${esc(t)}</span>`).join("")}</div>
       <div class="proj-foot">
