@@ -205,18 +205,14 @@ function renderJourney() {
   el.innerHTML = JOURNEY.map((n) => {
     const color = CAT_VARS[n.category] || "var(--accent)";
     const impact = n.impact ? `<span class="tl-impact">${esc(n.impact)}</span>` : "";
-    const tags = n.tags.map((t) => `<span class="tl-tag">${esc(t)}</span>`).join("");
     return `
-      <div class="tl-node animate-on-scroll" style="--node-color:${color}">
-        <div class="tl-card glass-card">
-          <div class="tl-meta">
-            <span class="tl-year">${esc(n.year)}</span>
-            <span class="tl-cat">${esc(n.cat)}</span>
-          </div>
+      <div class="tl-row animate-on-scroll" style="--node-color:${color}">
+        <div class="tl-year">${esc(n.year)}</div>
+        <div class="tl-content">
+          <span class="tl-cat">${esc(n.cat)}</span>
           <h3 class="tl-title">${esc(n.title)}</h3>
           <p class="tl-desc">${esc(n.desc)}</p>
           ${impact}
-          <div class="tl-tags">${tags}</div>
         </div>
       </div>`;
   }).join("");
