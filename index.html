@@ -1,242 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Mihir — AI/ML Engineer. Backend systems, LLMOps, and agentic AI pipelines. From biological data science to production AI." />
-<meta name="theme-color" content="#000000" />
-<title>Mihir — AI/ML Engineer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="./style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Mihir — AI/ML Engineer. Backend systems, LLMOps, and agentic AI pipelines. From biological data science to production AI." />
+  <meta name="theme-color" content="#000000" />
+  <title>Mihir — AI/ML Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
 
-<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<!-- ============================ NAVBAR ============================ -->
-<header class="navbar" id="navbar">
-  <nav class="nav-inner">
-    <a href="#home" class="nav-logo">Mihir</a>
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
 
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#journey" class="nav-link">Journey</a></li>
-      <li><a href="#edge" class="nav-link">Edge</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#edge" class="nav-link">Edge</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <!-- ============================ HERO ============================ -->
-  <section class="hero tile-dark" id="home">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1 class="hero-name">Mihir</h1>
-        <p class="hero-tagline" id="hero-tagline" aria-label="Building Intelligent Systems · From Biology to AI · Engineer at the Edge of What's Possible"></p>
-        <p class="hero-sub">
-          AI/ML Engineer specializing in backend systems, LLMOps, and agentic pipelines.
-          <br />Currently building at IIT Gandhinagar.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary btn-magnetic">View My Work</a>
-          <a href="#contact" class="btn btn-ghost btn-magnetic">Get in Touch</a>
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero tile-dark" id="home">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-name">Mihir</h1>
+          <p class="hero-tagline" id="hero-tagline"
+            aria-label="Building Intelligent Systems · From Biology to AI · Engineer at the Edge of What's Possible">
+          </p>
+          <p class="hero-sub">
+            AI/ML Engineer specializing in backend systems, LLMOps, and agentic pipelines.
+            <br />Currently building at IIT Gandhinagar.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary btn-magnetic">View My Work</a>
+            <a href="#contact" class="btn btn-ghost btn-magnetic">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="memoji-container" aria-label="Mihir's Memoji — developer with MacBook">
+            <!-- TODO: MIHIR — drop your exported Memoji PNG at ./assets/memoji.png -->
+            <img id="memoji-placeholder" src="./assets/memoji.png" alt="Mihir's Memoji" width="300" height="300" />
+            <svg class="orbit-ring orbit-ring-1" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+              <ellipse cx="150" cy="150" rx="148" ry="58" transform="rotate(-24 150 150)" stroke="rgba(64,156,255,0.85)"
+                stroke-width="2" stroke-dasharray="9 7" />
+            </svg>
+            <svg class="orbit-ring orbit-ring-2" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+              <ellipse cx="150" cy="150" rx="148" ry="58" transform="rotate(42 150 150)" stroke="rgba(120,210,255,0.7)"
+                stroke-width="1.5" stroke-dasharray="5 9" />
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="memoji-container" aria-label="Mihir's Memoji — developer with MacBook">
-          <!-- TODO: MIHIR — drop your exported Memoji PNG at ./assets/memoji.png -->
-          <img
-            id="memoji-placeholder"
-            src="./assets/memoji.png"
-            alt="Mihir's Memoji"
-            width="300"
-            height="300"
-          />
-          <svg class="orbit-ring orbit-ring-1" viewBox="0 0 300 300" fill="none" aria-hidden="true">
-            <ellipse cx="150" cy="150" rx="148" ry="58" transform="rotate(-24 150 150)" stroke="rgba(64,156,255,0.85)" stroke-width="2" stroke-dasharray="9 7" />
-          </svg>
-          <svg class="orbit-ring orbit-ring-2" viewBox="0 0 300 300" fill="none" aria-hidden="true">
-            <ellipse cx="150" cy="150" rx="148" ry="58" transform="rotate(42 150 150)" stroke="rgba(120,210,255,0.7)" stroke-width="1.5" stroke-dasharray="5 9" />
-          </svg>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section tile-light" id="about">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">About</h2>
+        <div class="about-copy">
+          <p class="animate-on-scroll">
+            I started in biological data science, where I fell for a single idea: that
+            complex systems become knowable through data. Genomes, proteins, clinical
+            signals — noise until you find the structure underneath. That pursuit led me,
+            almost inevitably, into AI and machine learning.
+          </p>
+          <p class="animate-on-scroll">
+            For years I've worked at the intersection of biology, data, and software —
+            building tools adopted by scientists around the world. Today I engineer AI
+            systems: RAG pipelines, multi-agent architectures, and the LLMOps
+            infrastructure that keeps them correct, observable, and shippable.
+          </p>
+          <p class="animate-on-scroll">
+            Outside the terminal: racing, philosophy, and personal finance — the same
+            curiosity pointed at systems that aren't made of code. Because navigating
+            complex systems was never only about software.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <a href="#about" class="scroll-hint" aria-label="Scroll down">
-      <span></span>
-    </a>
-  </section>
-
-  <!-- ============================ ABOUT ============================ -->
-  <section class="section tile-light" id="about">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">About</h2>
-      <div class="about-copy">
-        <p class="animate-on-scroll">
-          I started in biological data science, where I fell for a single idea: that
-          complex systems become knowable through data. Genomes, proteins, clinical
-          signals — noise until you find the structure underneath. That pursuit led me,
-          almost inevitably, into AI and machine learning.
+    <!-- ============================ JOURNEY ============================ -->
+    <section class="section tile-offwhite" id="journey">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">A non-linear path, on purpose.</h2>
+        <p class="section-sub animate-on-scroll">
+          From biological data science to production AI systems — every pivot was a calculated acceleration.
         </p>
-        <p class="animate-on-scroll">
-          For years I've worked at the intersection of biology, data, and software —
-          building tools adopted by scientists around the world. Today I engineer AI
-          systems: RAG pipelines, multi-agent architectures, and the LLMOps
-          infrastructure that keeps them correct, observable, and shippable.
-        </p>
-        <p class="animate-on-scroll">
-          Outside the terminal: racing, philosophy, and personal finance — the same
-          curiosity pointed at systems that aren't made of code. Because navigating
-          complex systems was never only about software.
-        </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============================ JOURNEY ============================ -->
-  <section class="section tile-offwhite" id="journey">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">A non-linear path, on purpose.</h2>
-      <p class="section-sub animate-on-scroll">
-        From biological data science to production AI systems — every pivot was a calculated acceleration.
-      </p>
-
-      <div class="timeline" id="timeline">
-        <!-- Nodes injected by script.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ EDGE / DOMAIN ADVANTAGE ============================ -->
-  <section class="section tile-light edge" id="edge">
-    <div class="container">
-      <span class="edge-eyebrow animate-on-scroll">The unfair advantage</span>
-      <h2 class="section-title animate-on-scroll">Biology was the hard part.</h2>
-      <div class="edge-body">
-        <p class="animate-on-scroll">
-          Most engineers building AI have never had to model data this unforgiving.
-          Biological data is sparse, noisy, and high-dimensional, and it rarely comes
-          with clean ground truth — a protein doesn't ship with labels, a genome doesn't
-          fit in a spreadsheet, and a clinical signal is mostly noise. Years in biological
-          data science were years spent learning to find the signal anyway.
-        </p>
-        <p class="animate-on-scroll">
-          That's the edge I carry into AI. I don't just wire up pipelines — I understand
-          the domains where models quietly break. Bringing RAG, agents, and LLMOps to
-          biomedical and scientific data isn't a pivot away from my background. It's the
-          payoff for it: <strong>a decade of domain fluency that most AI engineers will
-          never have, applied to the problems that need it most.</strong>
-        </p>
-      </div>
-
-      <div class="edge-points">
-        <div class="edge-point glass-card animate-on-scroll">
-          <h3>Hard data by default</h3>
-          <p>Sparse labels, high dimensionality, and measurement noise were my baseline — not the exception.</p>
-        </div>
-        <div class="edge-point glass-card animate-on-scroll">
-          <h3>Domain fluency</h3>
-          <p>I read the biology, not just the schema. I know what a result <em>means</em>, not only what it computes to.</p>
-        </div>
-        <div class="edge-point glass-card animate-on-scroll">
-          <h3>Correctness-first</h3>
-          <p>In science, a confident wrong answer is worse than none. That instinct shapes how I build every system.</p>
+        <div class="timeline" id="timeline">
+          <!-- Nodes injected by script.js -->
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================ PROJECTS ============================ -->
-  <section class="section tile-dark" id="projects">
-    <div class="container">
-      <h2 class="section-title sticky-headline animate-on-scroll">Things I've Built</h2>
-      <p class="section-sub animate-on-scroll">Systems across AI, full-stack, and bioinformatics.</p>
+    <!-- ============================ EDGE / DOMAIN ADVANTAGE ============================ -->
+    <section class="section tile-light edge" id="edge">
+      <div class="container">
+        <span class="edge-eyebrow animate-on-scroll">The unfair advantage</span>
+        <h2 class="section-title animate-on-scroll">Biology was the hard part.</h2>
+        <div class="edge-body">
+          <p class="animate-on-scroll">
+            Most engineers building AI have never had to model data this unforgiving.
+            Biological data is sparse, noisy, and high-dimensional, and it rarely comes
+            with clean ground truth — a protein doesn't ship with labels, a genome doesn't
+            fit in a spreadsheet, and a clinical signal is mostly noise. Years in biological
+            data science were years spent learning to find the signal anyway.
+          </p>
+          <p class="animate-on-scroll">
+            That's the edge I carry into AI. I don't just wire up pipelines — I understand
+            the domains where models quietly break. Bringing RAG, agents, and LLMOps to
+            biomedical and scientific data isn't a pivot away from my background. It's the
+            payoff for it: <strong>a decade of domain fluency that most AI engineers will
+              never have, applied to the problems that need it most.</strong>
+          </p>
+        </div>
 
-      <!-- Skills the projects put to work -->
-      <div class="proj-skills animate-on-scroll">
-        <span class="proj-skills-label">Skills these projects put to work</span>
-        <div class="proj-skills-pills" id="proj-skills-pills"><!-- injected by script.js --></div>
+        <div class="edge-points">
+          <div class="edge-point glass-card animate-on-scroll">
+            <h3>Hard data by default</h3>
+            <p>Sparse labels, high dimensionality, and measurement noise were my baseline — not the exception.</p>
+          </div>
+          <div class="edge-point glass-card animate-on-scroll">
+            <h3>Domain fluency</h3>
+            <p>I read the biology, not just the schema. I know what a result <em>means</em>, not only what it computes
+              to.</p>
+          </div>
+          <div class="edge-point glass-card animate-on-scroll">
+            <h3>Correctness-first</h3>
+            <p>In science, a confident wrong answer is worse than none. That instinct shapes how I build every system.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Featured card injected first, then grid -->
-      <div id="featured-project"></div>
-      <div class="projects-grid" id="projects-grid">
-        <!-- Cards injected by script.js -->
+    <!-- ============================ PROJECTS ============================ -->
+    <section class="section tile-dark" id="projects">
+      <div class="container">
+        <h2 class="section-title sticky-headline animate-on-scroll">Things I've Built</h2>
+        <p class="section-sub animate-on-scroll">Systems across AI, full-stack, and bioinformatics.</p>
+
+        <!-- Skills the projects put to work -->
+        <div class="proj-skills animate-on-scroll">
+          <span class="proj-skills-label">Skills these projects put to work</span>
+          <div class="proj-skills-pills" id="proj-skills-pills"><!-- injected by script.js --></div>
+        </div>
+
+        <!-- Featured card injected first, then grid -->
+        <div id="featured-project"></div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Cards injected by script.js -->
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============================ IMPACT ============================ -->
-  <section class="section tile-dark impact-section" id="impact" aria-label="Impact">
-    <div class="impact-inner">
-      <div class="impact-number animate-counter" data-target="100" data-suffix="+">0</div>
-      <p class="impact-label">Scientists worldwide use BFEER — an open-source drug-discovery tool built during M.Sc research.</p>
-    </div>
-    <div class="impact-inner">
-      <div class="impact-number animate-counter" data-target="13" data-suffix="+">0</div>
-      <p class="impact-label">Production-grade projects spanning agentic AI, bioinformatics, and full-stack systems.</p>
-    </div>
-  </section>
-
-  <!-- ============================ SKILLS ============================ -->
-  <section class="section tile-light" id="skills">
-    <svg class="skills-deco" viewBox="0 0 600 200" fill="none" aria-hidden="true">
-      <path d="M0 100 H100 V40 H200 V100 H350 V160 H450 V100 H600" stroke="rgba(0,102,204,0.08)" stroke-width="1.5" fill="none"/>
-      <circle cx="100" cy="100" r="4" fill="rgba(0,102,204,0.12)"/>
-      <circle cx="200" cy="40" r="3" fill="rgba(90,200,250,0.12)"/>
-      <circle cx="350" cy="100" r="4" fill="rgba(0,102,204,0.10)"/>
-      <circle cx="450" cy="160" r="3" fill="rgba(90,200,250,0.10)"/>
-    </svg>
-    <div class="container">
-      <h2 class="section-title sticky-headline animate-on-scroll">The Stack</h2>
-      <p class="section-sub animate-on-scroll">Hands-on tools, grouped by where they live in the system.</p>
-      <div class="skills-grid" id="skills-grid">
-        <!-- Domains injected by script.js -->
+    <!-- ============================ IMPACT ============================ -->
+    <section class="section tile-dark impact-section" id="impact" aria-label="Impact">
+      <div class="impact-inner">
+        <div class="impact-number animate-counter" data-target="100" data-suffix="+">0</div>
+        <p class="impact-label">Scientists worldwide use BFEER — an open-source drug-discovery tool built during M.Sc
+          research.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ============================ CONTACT ============================ -->
-  <section class="section tile-charcoal" id="contact">
-    <div class="container contact-inner">
-      <h2 class="section-title animate-on-scroll">Let's Talk</h2>
-      <p class="section-sub animate-on-scroll">
-        Have a project in mind, a role to discuss, or just want to connect?
-      </p>
-      <div class="contact-links animate-on-scroll">
-        <a href="https://linkedin.com/in/mihir-gor" target="_blank" rel="noopener" class="btn btn-ghost contact-btn btn-magnetic">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-        <!-- GitHub profile confirmed from repo origin -->
-        <a href="https://github.com/LeoPanthera07" target="_blank" rel="noopener" class="btn btn-ghost contact-btn btn-magnetic">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
-          GitHub
-        </a>
+      <div class="impact-inner">
+        <div class="impact-number animate-counter" data-target="13" data-suffix="+">0</div>
+        <p class="impact-label">Production-grade projects spanning agentic AI, bioinformatics, and full-stack systems.
+        </p>
       </div>
-      <a href="mailto:mihirgor.work@gmail.com" class="contact-email animate-on-scroll">mihirgor.work@gmail.com</a>
-    </div>
-  </section>
-</main>
+    </section>
 
-<!-- ============================ FOOTER ============================ -->
-<footer class="footer tile-dark">
-  <p>© 2026 Mihir Gor · Built with intention</p>
-</footer>
+    <!-- ============================ SKILLS ============================ -->
+    <section class="section tile-light" id="skills">
+      <svg class="skills-deco" viewBox="0 0 600 200" fill="none" aria-hidden="true">
+        <path d="M0 100 H100 V40 H200 V100 H350 V160 H450 V100 H600" stroke="rgba(0,102,204,0.08)" stroke-width="1.5"
+          fill="none" />
+        <circle cx="100" cy="100" r="4" fill="rgba(0,102,204,0.12)" />
+        <circle cx="200" cy="40" r="3" fill="rgba(90,200,250,0.12)" />
+        <circle cx="350" cy="100" r="4" fill="rgba(0,102,204,0.10)" />
+        <circle cx="450" cy="160" r="3" fill="rgba(90,200,250,0.10)" />
+      </svg>
+      <div class="container">
+        <h2 class="section-title sticky-headline animate-on-scroll">The Stack</h2>
+        <p class="section-sub animate-on-scroll">Hands-on tools, grouped by where they live in the system.</p>
+        <div class="skills-grid" id="skills-grid">
+          <!-- Domains injected by script.js -->
+        </div>
+      </div>
+    </section>
 
-<script src="./script.js"></script>
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section tile-charcoal" id="contact">
+      <div class="container contact-inner">
+        <h2 class="section-title animate-on-scroll">Let's Talk</h2>
+        <p class="section-sub animate-on-scroll">
+          Have a project in mind, a role to discuss, or just want to connect?
+        </p>
+        <div class="contact-links animate-on-scroll">
+          <a href="https://linkedin.com/in/mihir-gor" target="_blank" rel="noopener"
+            class="btn btn-ghost contact-btn btn-magnetic">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+            </svg>
+            LinkedIn
+          </a>
+          <!-- GitHub profile confirmed from repo origin -->
+          <a href="https://github.com/LeoPanthera07" target="_blank" rel="noopener"
+            class="btn btn-ghost contact-btn btn-magnetic">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+        <a href="mailto:mihirgor.work@gmail.com" class="contact-email animate-on-scroll">mihirgor.work@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer tile-dark">
+    <p>© 2026 Mihir Gor · Built with intention</p>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>
